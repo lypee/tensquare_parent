@@ -1,0 +1,13 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: tensquare_gathering
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.108.189.144:3306/tensquare_gathering?chaactorEncoding=UTF8
+    username: root
+    password: Ly123456
+  jpa:
+    database: mysql
+    show-sql: true

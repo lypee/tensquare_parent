@@ -1,9 +1,12 @@
 package com.tensquare.gathering.pojo;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
-
+@Entity
+@Table(name = "tb_gathering")
 public class Gathering implements Serializable {
     @Id
     private String id ;

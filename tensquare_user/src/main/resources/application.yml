@@ -1,0 +1,22 @@
+server:
+  port: 9008
+spring:
+  jpa:
+    database: mysql
+    show-sql: true
+  redis:
+    host: 39.108.189.144
+    password: ly123456
+  rabbitmq:
+    host: 39.108.189.144
+    username: lypee
+    password: lypee
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.108.189.144:3306/tensquare_user?characterEncoding=UTF8
+    username: root
+    password: Ly123456
+jwt:
+  config:
+    key: "lypee"
+    ttl: 600000
