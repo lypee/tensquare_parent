@@ -1,9 +1,17 @@
 package com.temsquare.qa.controller;
 
+import com.temsquare.qa.client.BaseClient;
+import com.temsquare.qa.pojo.Problem;
+import com.temsquare.qa.service.ProblemService;
 import entity.PageResult;
 import entity.Result;
 import entity.StatusCode;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RestController
@@ -20,7 +28,7 @@ public class ProblemController {
     @Autowired
     private BaseClient baseClient;
 
-    @RequestMapping(value = "/label/{labelId}", method = RequestMethod.GET)
+    @GetMapping(value = "/label/{labelId}")
     public Result findByLabelId(@PathVariable String labelId){
         Result result = baseClient.findById(labelId);
         return result;
@@ -93,7 +101,13 @@ public class ProblemController {
      */
     @RequestMapping(method=RequestMethod.POST)
     public Result add(@RequestBody Problem problem  ){
-        String token = (String) request.getAttribute("claims_user");
+        //验证是否为管理员权限
+        String token = (String) request.getAttribute("claims_admin") ;
+        //如果当前登录的是admin权限 , 则不进行这个判断
+        //如果当前登录的不是admin状态 , 则进行 是否为user权限判断 .
+        if(StringUtils.isBlank(token)){
+            token = (String) request.getAttribute("claims_user");
+        }
         if(token==null || "".equals(token)){
             return new Result(false, StatusCode.ACCESSERROR, "权限不足");
         }

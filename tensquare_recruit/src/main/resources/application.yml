@@ -2,7 +2,7 @@ server:
   port: 9002
 spring:
   application:
-    name: tensquare_recruit
+    name: tensquare-recruit
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/tensquare_base?characterEncoding=utf-8
@@ -11,3 +11,7 @@ spring:
   jpa:
     database: MYSQL
     show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/

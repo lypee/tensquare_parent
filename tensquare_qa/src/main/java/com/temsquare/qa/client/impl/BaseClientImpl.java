@@ -6,6 +6,9 @@ import entity.Result;
 import entity.StatusCode;
 import org.springframework.stereotype.Component;
 
+/**
+ * 熔断器类 可以记录日志
+ */
 @Component
 public class BaseClientImpl  implements BaseClient {
     @Override

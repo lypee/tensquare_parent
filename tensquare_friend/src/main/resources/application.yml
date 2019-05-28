@@ -1,0 +1,21 @@
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+spring:
+  application:
+    name: tensquare-friend
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: Ly123456
+    url: jdbc:mysql://39.108.189.144:3306/tensquare_friend?characterEncoding=utf-8
+  jpa:
+    database: mysql
+    show-sql: true
+jwt:
+  config:
+    key: "lypee"
+server:
+  port: 9010

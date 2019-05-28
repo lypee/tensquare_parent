@@ -1,6 +1,8 @@
 server:
   port: 9008
 spring:
+  application:
+    name: tensquare-user
   jpa:
     database: mysql
     show-sql: true
@@ -20,3 +22,7 @@ jwt:
   config:
     key: "lypee"
     ttl: 600000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/

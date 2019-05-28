@@ -12,9 +12,20 @@ spring:
     name: tensquare-base
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/tensquare_base?characterEncoding=utf-8
+    url: jdbc:mysql://39.108.189.144:3306/tensquare_base?characterEncoding=utf-8
     username: root
     password: Ly123456
   jpa:
     database: mysql
     show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+hystrix:
+ command:
+  default:
+   execution:
+    isolation:
+     thread:
+      timeoutInMilliseconds: 10000

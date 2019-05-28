@@ -13,6 +13,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 import util.JwtUtil;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,12 +27,14 @@ public class UserController {
     private RedisTemplate redisTemplate ;
     @Autowired
     private JwtUtil jwtUtil ;
-
+    @Autowired
+    private HttpServletRequest request ;
     /**
      * 更新好友和粉丝数
      **/
     @PutMapping("/{userid}/{friendid}/{x}")
     public void updatefanscountandfollowcount(@PathVariable("userid") String userid, @PathVariable("friendid") String friendid, @PathVariable("x") int x) {
+        userService.updatefanscountandfollowcount(x , userid , friendid);
     }
 
     @PostMapping("/login")
@@ -46,6 +49,7 @@ public class UserController {
         Map<String, Object> map = new HashMap<>();
         map.put("token", token);
         map.put("roles", "user");
+        request.setAttribute("user_token", map);
         return new Result(true, StatusCode.OK, "登录成功", map);
     }
 

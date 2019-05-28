@@ -206,6 +206,6 @@ public void deleteById(String id)
     public void updatefanscountandfollowcount(int x , String userid , String friendid)
     {
         userDao.updatefanscount(x, friendid);
-        userDao.updatefollowcount(x , friendid);
+        userDao.updatefollowcount(x , userid);
     }
 }

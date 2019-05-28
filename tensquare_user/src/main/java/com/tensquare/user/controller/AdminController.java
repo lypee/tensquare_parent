@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import util.JwtUtil;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +23,8 @@ public class AdminController {
     private AdminService adminService ;
     @Autowired
     private JwtUtil jwtUtil ;
+    @Autowired
+    private HttpServletRequest request ;
 
     @PostMapping("/login")
     public Result login(@RequestBody Admin admin) {
@@ -35,6 +38,7 @@ public class AdminController {
         Map<String, Object> map = new HashMap<>();
         map.put("token", token);
         map.put("role", "admin");
+        request.setAttribute("user_token", map);
         return new Result(true, StatusCode.OK, "登录成功", map);
     }
     /**

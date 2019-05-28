@@ -2,7 +2,7 @@ server:
   port: 9005
 spring:
   application:
-    name: tensquare_gathering
+    name: tensquare-gathering
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://39.108.189.144:3306/tensquare_gathering?chaactorEncoding=UTF8
@@ -11,3 +11,7 @@ spring:
   jpa:
     database: mysql
     show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/

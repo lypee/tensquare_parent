@@ -6,10 +6,14 @@ spring:
     username: lypee
     password: lypee
   application:
-    name: tensquare_sms
+    name: tensquare-sms
 aliyun:
   sms:
     accessKeyId: LTAILNrhJAYrPaQe
     accessKeySecret: q7fOlR8liJcFAFBs5SCsnWCzbKhqKK
     template_code: SMS_166372744
     sign_name: 十次方社交网站
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/

@@ -18,7 +18,7 @@ import java.util.Map;
 public class RecruitController {
     @Autowired
     private RecruitService recruitService ;
-    @GetMapping
+    @GetMapping("/search/recommend")
     public Result recommend(){
         List<Recruit> list = recruitService.findTop6ByStateOrderByCreateTime();
         return new Result(true, StatusCode.OK, "查询成功", list);

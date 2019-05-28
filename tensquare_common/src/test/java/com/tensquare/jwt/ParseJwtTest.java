@@ -8,8 +8,8 @@ import java.text.SimpleDateFormat;
 public class ParseJwtTest {
     public static void main(String[] args) {
         Claims claims = Jwts.parser()
-                .setSigningKey("itcast")
-                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2NjYiLCJzdWIiOiLlsI_pqawiLCJpYXQiOjE1NTg5MjU4MzcsImV4cCI6MTU1ODkyNTg5Nywicm9sZSI6ImFkbWluIn0.taCz312L31T353XK4WB_oQ77S-SMEjPwToyI6Kd5rEw")
+                .setSigningKey("lypee")
+                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTMyOTc4MDY0NTQ0ODk0OTc2Iiwic3ViIjoiMTM5ODAyNzA4MDAiLCJpYXQiOjE1NTg5NjY1NTcsInJvbGVzIjoidXNlciIsImV4cCI6MTU1ODk2NzE1N30.XbY-pD9uIk8m9sFshzYIvok6tq8JPfKRGHcI4aD9Zuc")
                 .getBody();
         System.out.println("用户id："+claims.getId());
         System.out.println("用户名："+claims.getSubject());
