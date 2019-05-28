@@ -11,6 +11,7 @@
         <module name="temsquare_base" />
         <module name="tensquare_recruit" />
         <module name="tensquare_eureka" />
+        <module name="tensquare_config" />
         <module name="tensquare_web" />
         <module name="tensquare_friend" />
         <module name="tensquare_common" />
@@ -26,6 +27,7 @@
       <module name="temsquare_base" target="1.8" />
       <module name="tensquare_article" target="1.8" />
       <module name="tensquare_common" target="1.8" />
+      <module name="tensquare_config" target="1.8" />
       <module name="tensquare_euraka" target="1.8" />
       <module name="tensquare_eureka" target="1.8" />
       <module name="tensquare_friend" target="1.8" />
@@ -46,6 +48,7 @@
       <module name="temsquare_base" options="-parameters" />
       <module name="tensquare_article" options="-parameters" />
       <module name="tensquare_common" options="-parameters" />
+      <module name="tensquare_config" options="-parameters" />
       <module name="tensquare_euraka" options="-parameters" />
       <module name="tensquare_eureka" options="-parameters" />
       <module name="tensquare_friend" options="-parameters" />

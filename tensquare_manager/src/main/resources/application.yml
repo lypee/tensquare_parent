@@ -18,3 +18,6 @@ zuul:
     tensquare-qa:
       path: /qa/**
       serviceId: tensquare-qa
+jwt:
+  config:
+    key: "lypee"
