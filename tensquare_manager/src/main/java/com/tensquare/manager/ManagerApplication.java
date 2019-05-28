@@ -3,6 +3,7 @@ package com.tensquare.manager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.netflix.zuul.EnableZuulServer;
@@ -12,6 +13,7 @@ import util.JwtUtil;
 @EnableZuulProxy
 @EnableEurekaClient
 @SpringBootApplication
+@RefreshScope
 public class ManagerApplication {
     public static void main(String[] args)
     {

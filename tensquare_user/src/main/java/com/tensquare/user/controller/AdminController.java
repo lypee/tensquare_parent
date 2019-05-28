@@ -7,6 +7,8 @@ import entity.PageResult;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import util.JwtUtil;
@@ -18,6 +20,7 @@ import java.util.Map;
 @RestController
 @CrossOrigin
 @RequestMapping("/admin")
+@RefreshScope
 public class AdminController {
     @Autowired
     private AdminService adminService ;
@@ -46,6 +49,7 @@ public class AdminController {
      */
     @GetMapping
     public Result findAll(){
+
         return new Result(true, StatusCode.OK, "查询 成功", adminService.findAll());
     }
     /**

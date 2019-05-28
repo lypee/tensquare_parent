@@ -3,6 +3,7 @@ package com.tensquare.user;
 import com.tensquare.user.interceptor.JwtInterceptor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -10,6 +11,7 @@ import util.IdWorker;
 import util.JwtUtil;
 
 @SpringBootApplication
+@RefreshScope
 //@ComponentScan(basePackages = {"com.tensquare.user.interceptor" , "com.tensquare.user.config" , "com.tensqu"})
 //@EnableEurekaClient
 public class UserApplication {

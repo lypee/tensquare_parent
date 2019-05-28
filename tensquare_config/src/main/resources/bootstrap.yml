@@ -1,0 +1,21 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: tensquare-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lypee/tensquare_properties
+          username: 237454712@qq.com
+          password: lpy980719
+  rabbitmq:
+    host: 39.108.189.144
+    username: lypee
+    password: lypee
+management: #暴露触发消息总线的地址
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

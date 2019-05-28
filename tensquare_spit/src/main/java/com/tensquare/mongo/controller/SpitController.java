@@ -6,6 +6,8 @@ import entity.PageResult;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +15,15 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/spit")
 @CrossOrigin
+@RefreshScope
 public class SpitController {
     @Autowired
     private SpitService spitService ;
     @Autowired
     private RedisTemplate redisTemplate ;
 
+    @Value("${ip}")
+    private String ip;
 
     @GetMapping
     public Result  findAll(){
@@ -27,6 +32,7 @@ public class SpitController {
     @GetMapping("/{id}")
     public Result findById(@PathVariable("id")String id)
     {
+        System.out.println("测试ip为: " + ip);
         return new Result(true, StatusCode.OK, "查询成功", spitService.findById(id));
     }
     @PostMapping

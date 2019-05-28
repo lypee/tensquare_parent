@@ -7,6 +7,7 @@ import entity.StatusCode;
 import io.jsonwebtoken.Claims;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 import util.JwtUtil;
 
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/friend")
+@RefreshScope
 public class FriendController {
     @Autowired
     private HttpServletRequest request;
