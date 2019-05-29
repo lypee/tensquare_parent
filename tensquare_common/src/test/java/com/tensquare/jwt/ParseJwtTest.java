@@ -9,7 +9,7 @@ public class ParseJwtTest {
     public static void main(String[] args) {
         Claims claims = Jwts.parser()
                 .setSigningKey("lypee")
-                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTMyOTc4MDY0NTQ0ODk0OTc2Iiwic3ViIjoiMTM5ODAyNzA4MDAiLCJpYXQiOjE1NTg5NjY1NTcsInJvbGVzIjoidXNlciIsImV4cCI6MTU1ODk2NzE1N30.XbY-pD9uIk8m9sFshzYIvok6tq8JPfKRGHcI4aD9Zuc")
+                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTMyODMxNzYyNzMzNDY5Njk2Iiwic3ViIjoibHlwZWUiLCJpYXQiOjE1NTkwNDQ1NTEsInJvbGVzIjoiYWRtaW4iLCJleHAiOjE1NTkwNTA1NTF9.k9jRgrr7AIiHj1iSAK_4B3ThnCelcLe5YlbM7YjNvyg")
                 .getBody();
         System.out.println("用户id："+claims.getId());
         System.out.println("用户名："+claims.getSubject());
